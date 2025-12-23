@@ -38,7 +38,7 @@ class vec3 {
     }
 
     double length() const {
-        return std:sqrt(length_squared());
+        return std::sqrt(length_squared());
     }
 
     double length_squared() const {
