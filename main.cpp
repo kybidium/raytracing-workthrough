@@ -9,12 +9,12 @@ double hit_sphere(const point3& center, double radius, const ray& r) {
     auto a = r.direction().length_squared();
     auto h = dot(r.direction(), oc); // use h to factor out a 2 from b (b = 2h)
     auto c = oc.length_squared() - radius*radius;
-    auto discriminant = b*b - 4*a*c;
+    auto discriminant = h*h - a*c;
 
     if (discriminant < 0) {
         return -1.0;
     } else {
-        return (-b - std::sqrt(discriminant) ) / (2.0 * a);
+        return (h - std::sqrt(discriminant) ) / a;
     }
 }
 
